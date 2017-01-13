@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../dist/anychart-jquery.min.js"></script>
+</head>
+<body>
+<div id="container" style="width: 640px; height: 480px;"></div>
+<button id="pie">render pie chart</button>
+<button id="bg">change background to pink</button>
+<script>
+    var cnt = $('#container');
+    cnt.anychart('line', [3, 1, 2]);
+
+    $('#pie').click(function() {
+        cnt.anychart('pie', [4, 3, 3, 4]);
+    });
+
+    $('#bg').click(function() {
+        cnt.anychart().background('pink');
+    })
+</script>
+</body>
+</html>

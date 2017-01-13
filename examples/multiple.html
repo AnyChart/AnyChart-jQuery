@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../dist/anychart-jquery.min.js"></script>
+
+    <style>
+        .chart {
+            width: 400px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="chart"></div>
+<div class="chart"></div>
+<div class="chart"></div>
+<button id="bg">change backgrounds</button>
+<script>
+    var cnts = $('.chart');
+
+    cnts.anychart('column', [3, 1, 2], [5, 3, 6]);
+
+    var bg = 'red green blue'.split(' ');
+
+    $('#bg').click(function() {
+        cnts.each(function(index) {
+            $(this).anychart().background(bg[index] + ' .5');
+        });
+    })
+
+</script>
+</body>
+</html>

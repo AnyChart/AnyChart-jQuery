@@ -1,0 +1,40 @@
+{
+  "name": "anychart-jquery",
+  "version": "1.0.0",
+  "description": "AnyChart jQuery Plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnyChart/AnyChart-jQuery.git"
+  },
+  "author": "AnyChart",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/AnyChart/AnyChart-jQuery/issues"
+  },
+  "homepage": "https://github.com/AnyChart/AnyChart-jQuery#readme",
+  "keywords": [
+    "anychart",
+    "anystock",
+    "anygantt",
+    "anymap",
+    "charts",
+    "javascript charts",
+    "ajax charts",
+    "plots",
+    "line charts",
+    "bar charts",
+    "pie charts",
+    "javascript plots",
+    "ajax plots",
+    "javascript",
+    "jQuery",
+    "SVG",
+    "HTML5",
+    "framework",
+    "VML"
+  ]
+}

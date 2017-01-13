@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../dist/anychart-jquery.min.js"></script>
+</head>
+<body>
+<div id="container" style="width: 640px; height: 480px;"></div>
+<button id="load">load new data</button>
+<script>
+    var cnt = $('#container');
+    cnt.anychart('line', [3, 1, 2]);
+
+    $('#load').click(function() {
+        $.ajax({
+            url: 'data.json',
+            type: 'GET',
+            dataType: 'json'
+        }).done(function(json) {
+            cnt.anychart().data(json);
+        })
+    });
+
+</script>
+</body>
+</html>

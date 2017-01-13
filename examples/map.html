@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../dist/anychart-jquery.min.js"></script>
+
+    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+</head>
+<body>
+<div id="container" style="width: 800px; height: 600px;"></div>
+<script>
+    $(document).ready(function() {
+        var data = anychart.data.set([
+            {'id': 'AU.WA', 'value': 300},
+            {'id': 'AU.JB', 'value': 230},
+            {'id': 'AU.NS', 'value': 240},
+            {'id': 'AU.VI', 'value': 275},
+            {'id': 'AU.NT', 'value': 130},
+            {'id': 'AU.TS', 'value': 190},
+            {'id': 'AU.CT', 'value': 100},
+            {'id': 'AU.SA', 'value': 305},
+            {'id': 'AU.QL', 'value': 190}
+        ]);
+        $('#container').anychart('choropleth', 'anychart.maps.australia', data);
+    });
+</script>
+</body>
+</html>
