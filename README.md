@@ -30,7 +30,25 @@ You can install AnyChart-React using **npm**, **bower** or **yarn**:
 * `yarn add anychart-jquery`
 
 ## Quick start
+To create a line chart just call `anychart('line', data)` on selected element.
+
+For example:
 `$('#chart-container').anychart('line', [3, 1, 2])`
+
+In terms of AnyChart it'll be equivalent to:
+
+```
+anychart.line(data).container('chart-container').draw()
+```
+
+If you want to obtain an instance of chart call `anychart()` without params.
+
+```
+var chart = $('#chart-container').anychart();
+chart.background('red');
+```
+
+Please see `examples` folder for other common use cases.
 
 ## Contacts
 
