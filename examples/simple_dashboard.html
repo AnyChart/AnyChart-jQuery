@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <script src="js/anychart-bundle.min.js"></script>
+    <script src="js/vendor/jquery-3.1.1.min.js"></script>
+    <!--<script src="../dist/anychart-jquery.min.js"></script>-->
+    <script src="../src/anychart-jquery.js"></script>
+</head>
+<body>
+<div id="container" style="width: 800px; height: 600px;"></div>
+<script>
+    /*var cnt = $('#container');
+    var chart1 = anychart.column([4, 3, 2, 1]);
+    chart1.bounds(0, 0, '100%', '50%');
+
+    var chart2 = anychart.pie([4, 2, 1, 3]);
+    chart2.bounds(0, '50%', '50%', '50%');
+
+    var chart3 = anychart.line([4, 7, 9, 10]);
+    chart3.bounds('50%', '50%', '50%', '50%');
+
+    cnt.anychartStage([chart1, chart2, chart3]);*/
+    anychart.onDocumentReady(function() {
+        var chart1 = anychart.column([4, 3, 2, 1]);
+        chart1.bounds(0, 0, '100%', '50%');
+
+        var chart2 = anychart.pie([4, 2, 1, 3]);
+        chart2.bounds(0, '50%', '50%', '50%');
+
+        var chart3 = anychart.line([4, 7, 9, 10]);
+        chart3.bounds('50%', '50%', '50%', '50%');
+
+        var stage = anychart.graphics.create('container');
+        stage.suspend();
+        chart1.container(stage).draw();
+        chart2.container(stage).draw();
+        chart3.container(stage).draw();
+        stage.resume();
+
+        stage.dispose();
+        var chart4 = anychart.line([3,1,2]);
+        chart4.container('container').draw();
+
+        chart4.dispose();
+        stage = anychart.graphics.create('container');
+        stage.suspend();
+        chart1.container(stage).draw();
+        chart2.container(stage).draw();
+        chart3.container(stage).draw();
+        stage.resume();
+    })
+</script>
+</body>
+</html>
