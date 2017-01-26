@@ -80,7 +80,7 @@
         var charts = instances[uid][2];
         for (var i = 0; i < charts.length; i++)
           charts[i].container(null);
-        instance.remove();
+        instance.container(null);
       } else {
         instances[uid][1].dispose();
       }
@@ -106,6 +106,15 @@
     return mapTypes.indexOf(type) != -1;
   };
 
+  /**
+   * Types representing gantt charts.
+   * @type {Array.<string>}
+   */
+  var ganttTypes = ['ganttProject', 'ganttResource'];
+  var isGanttType = function(type) {
+    return ganttTypes.indexOf(type) != -1;
+  };
+
   var id;
 
   /**
@@ -122,9 +131,10 @@
 
     if (arguments.length) {
       var type = arguments[0];
-      var geoData = arguments[1];
+      var geoOrGanttData = arguments[1];
       var args;
       var isMap = isMapType(type);
+      var isGantt = isGanttType(type);
       args = Array.prototype.slice.call(arguments, isMap ? 2 : 1);
 
       return this.each(function() {
@@ -133,7 +143,9 @@
 
         chart = anychart[type].apply(null, args);
         if (isMap)
-          chart.geoData(geoData);
+          chart.geoData(geoOrGanttData);
+        else if (isGantt)
+          chart.data(geoOrGanttData);
         chart.container(this);
         chart.draw();
 
@@ -167,9 +179,11 @@
             newCharts[i].container(stage).draw();
           }
           stage.resume();
+          instances[id][2] = newCharts;
         } else {
           removeInstanceByUid(id);
           stage.suspend();
+          stage.container(this[0]);
           for (i = 0; i < newCharts.length; i++) {
             newCharts[i].container(stage).draw();
           }
@@ -188,7 +202,8 @@
         instances[uid++] = [this[0], stage, newCharts];
       }
     } else {
-      return getInstanceByElem(this[0]);
+      var instance = getInstanceByElem(this[0]);
+      return isStage(instance) ? instance : null;
     }
   }
 

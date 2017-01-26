@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
 <head>
-    <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/anychart-bundle.min.js"></script>
+    <script src="js/vendor/jquery-3.1.1.min.js"></script>
     <script src="../dist/anychart-jquery.min.js"></script>
 </head>
 <body>
@@ -14,7 +14,7 @@
 
     $('#load').click(function() {
         $.ajax({
-            url: 'data.json',
+            url: 'assets/data.json',
             type: 'GET',
             dataType: 'json'
         }).done(function(json) {

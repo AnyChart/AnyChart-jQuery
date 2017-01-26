@@ -1,14 +1,15 @@
 [<img src="https://cdn.anychart.com/images/logo-transparent-segoe.png?2" width="234px" alt="AnyChart - Robust JavaScript/HTML5 Chart library for any project">](http://www.anychart.com)
 
-AnyChart-jQuery Plugin
+jQuery plugin for AnyChart.
 =========
 
-A jQuery plugin for AnyChart.
+jQuery plugin for AnyChart provides an easy way to use [AnyChart JavaScript Charts](http://anychart.com) with jQuery framework.
 
 ## Table of Contents
 
 * [Download and Install](#download-and-install)
 * [Quick Start](#quick-start)
+* [Examples Overview](#examples-overview)
 * [Contacts](#contacts)
 * [Links](#links)
 * [License](#license)
@@ -30,25 +31,102 @@ You can install AnyChart-React using **npm**, **bower** or **yarn**:
 * `yarn add anychart-jquery`
 
 ## Quick start
-To create a line chart just call `anychart('line', data)` on selected element.
-
-For example:
-`$('#chart-container').anychart('line', [3, 1, 2])`
-
-In terms of AnyChart it'll be equivalent to:
+Here is a basic sample that shows how to add a column chart:
 
 ```
-anychart.line(data).container('chart-container').draw()
+<!doctype html>
+<html>
+<head>
+	<!-- Add jQuery -->
+    <script src="js/vendor/jquery-3.1.1.min.js"></script>
+    <!-- Add anychart-bundle -->
+    <script src="js/anychart-bundle.min.js"></script>
+    <!-- Add AnyChart jQuery plugin -->
+    <script src="js/anychart-jquery.min.js"></script>
+</head>
+<body>
+<div id="container" style="width: 640px; height: 480px;"></div>
+<script>
+	// Render column chart to #container
+	$('#container').anychart('column', [3, 1, 2]);
+</script>
+</body>
+</html>
 ```
 
-If you want to obtain an instance of chart call `anychart()` without params.
+## API Overview
+#### `$(selector).anychart();`
+Returns instance of a chart if it was rendered to continer, `null` otherwise.
 
 ```
-var chart = $('#chart-container').anychart();
+$(selector).anychart('line', [3, 1, 2]);
+var chart = $(selector).anychart();
 chart.background('red');
 ```
 
-Please see `examples` folder for other common use cases.
+#### `$(selector).anychartStage();`
+Returns instance of a stage if it was rendered to container, `null` otherwise.
+
+```
+// e.g. create and setup chart1, chart2, chart3
+$(selector).anychartStage(chart1, chart2, chart3);
+
+var stage = $(selector).anychartStage();
+stage.width(400);
+```
+
+#### `$(selector).anychart(type, var_args);`
+Renders `type` chart to container.
+
+`type` can be either any of AnyChart chart types or `stock`, `ganttProject`, `ganttResource`.
+
+`var_args` are data that will be passed to a chart constructor.
+
+```
+// create line chart with 2 series
+$(selector).anychart('line', [3, 1, 2], [5, 4, 3]);
+```
+Other use cases you can find in [`examples`](https://github.com/AnyChart/AnyChart-jQuery/tree/master/examples) folder
+
+#### `$(selector).anychart(type, geoData, var_args);`
+Renders map chart to container.
+
+`type` can be one of `bubbleMap`, `choropleth`, `connector`, `markerMap`, `seatMap`
+
+`geoData` can be string or Object with geo data.
+
+`var_args` are chart data.
+
+```
+// create choroplet map with australia geodata.
+$(selector).anychart('choropleth', 'anychart.maps.australia', data);
+```
+
+#### `$(selector).anychartStage(var_args);`
+Renders preconfigured charts to a [stage](http://docs.anychart.com/latest/Graphics/Basics).
+
+`var_args` are charts that will be rendered to stage.
+
+```
+// create and setup chart1, chart2, chart3
+// ....
+// Render it to stage.
+$(selector).anychartStage(chart1, chart2, chart3);
+```
+
+
+
+## Examples Overview
+See these examples to learn how things work:
+
+* **[async_data_load.html](https://github.com/anychart/anychart-jquery/blob/master/examples/async_data_load.html)**: Example of async data load.
+* **[choropleth_map.html](https://github.com/anychart/anychart-jquery/blob/master/examples/choropleth_map.html)**: Example of choropleth map.
+* **[gantt.html](https://github.com/anychart/anychart-jquery/blob/master/examples/gantt.html)**: Example of gantt chart.
+* **[multiple_charts.html](https://github.com/anychart/anychart-jquery/blob/master/examples/multiple_charts.html)**: Example of working with multiple charts.
+* **[simple_chart_update.html](https://github.com/anychart/anychart-jquery/blob/master/examples/simple_chart_update.html)**: Simple chart which can be updated (switch type, change background).
+* **[simple_dashboard.html](https://github.com/anychart/anychart-jquery/blob/master/examples/simple_dashboard.html)**: Example of simple dashboard.
+* **[stock.html](https://github.com/anychart/anychart-jquery/blob/master/examples/stock.html)**: Example of stock chart.
+
 
 ## Contacts
 
