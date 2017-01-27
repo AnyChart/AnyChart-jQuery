@@ -130,7 +130,7 @@ See these examples to learn how things work:
 
 ## Contacts
 
-* Web: [www.anychart.com](www.anychart.com)
+* Web: [www.anychart.com](http://www.anychart.com)
 * Email: [contact@anychart.com](mailto:contact@anychart.com)
 * Twitter: [anychart](https://twitter.com/anychart)
 * Facebook: [AnyCharts](https://www.facebook.com/AnyCharts)
