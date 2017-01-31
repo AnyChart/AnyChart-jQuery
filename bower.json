@@ -1,6 +1,6 @@
 {
   "name": "anychart-jquery",
-  "description": "AnyChart jQuery Plugin",
+  "description": "JQuery plugin for AnyChart JavaScript charting library",
   "main": "./dist/anychart-jquery.min.js",
   "authors": [
     "AnyChart"
