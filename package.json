@@ -1,6 +1,6 @@
 {
   "name": "anychart-jquery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JQuery plugin for AnyChart JavaScript charting library",
   "main": "./dist/anychart-jquery.min.js",
   "scripts": {
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/AnyChart/AnyChart-jQuery#readme",
   "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery",
     "anychart",
     "anystock",
     "anygantt",
