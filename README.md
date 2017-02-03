@@ -37,7 +37,7 @@ Here is a basic sample that shows how to add a column chart:
 <!doctype html>
 <html>
 <head>
-	<!-- Add jQuery -->
+    <!-- Add jQuery -->
     <script src="js/vendor/jquery-3.1.1.min.js"></script>
     <!-- Add anychart-bundle -->
     <script src="js/anychart-bundle.min.js"></script>
@@ -47,7 +47,7 @@ Here is a basic sample that shows how to add a column chart:
 <body>
 <div id="container" style="width: 640px; height: 480px;"></div>
 <script>
-	// Render column chart to #container
+	// Render a column chart to a #container
 	$('#container').anychart('column', [3, 1, 2]);
 </script>
 </body>
@@ -83,7 +83,7 @@ Renders `type` chart to a container.
 `var_args` are data that is passed to the chart constructor.
 
 ```
-// create line chart with 2 series
+// create a line chart with 2 series
 $(selector).anychart('line', [3, 1, 2], [5, 4, 3]);
 ```
 Other use cases you can find in [AnyChart jQuery examples](https://github.com/AnyChart/AnyChart-jQuery/tree/master/examples) folder
@@ -98,7 +98,7 @@ Renders a map to a container.
 `var_args` are chart data.
 
 ```
-// create choroplet map with australia geodata.
+// create a choropleth series on the australia map
 $(selector).anychart('choropleth', 'anychart.maps.australia', data);
 ```
 
@@ -110,7 +110,7 @@ Renders preconfigured charts to a [stage](http://docs.anychart.com/latest/Graphi
 ```
 // create and setup chart1, chart2, chart3
 // ....
-// Render it to stage.
+// Render them to a stage.
 $(selector).anychartStage(chart1, chart2, chart3);
 ```
 
