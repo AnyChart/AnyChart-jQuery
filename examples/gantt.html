@@ -14,7 +14,7 @@
 
         #container {
             width: 800px;
-            height: 480px;
+            height: 537px;
         }
     </style>
 </head>
@@ -25,6 +25,7 @@
     var cnt = $('#container');
     cnt.anychart('ganttProject', data);
     var chart = cnt.anychart();
+    chart.splitterPosition(223);
     chart.fitAll();
 </script>
 </body>
