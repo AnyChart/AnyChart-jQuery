@@ -24,7 +24,7 @@ Binaries are located in [dist](https://github.com/AnyChart/AnyChart-jQuery/tree/
 
 #### Package managers
 
-You can install AnyChart-React using **npm**, **bower** or **yarn**:
+You can install AnyChart-jQuery using **npm**, **bower** or **yarn**:
 
 * `npm install anychart-jquery`
 * `bower install anychart-jquery`
