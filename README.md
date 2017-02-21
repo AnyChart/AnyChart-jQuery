@@ -151,4 +151,4 @@ See examples to learn how things work:
 
 ## License
 
-[© AnyChart.com - JavaScript charts](http://www.anychart.com). AnyChart jQuery pluigin is released under the [Apache 2.0 License](https://github.com/AnyChart/AnyChart-jQuery/blob/master/LICENSE).
+[© AnyChart.com - JavaScript charts](http://www.anychart.com). AnyChart jQuery plugin is released under the [Apache 2.0 License](https://github.com/AnyChart/AnyChart-jQuery/blob/master/LICENSE).
