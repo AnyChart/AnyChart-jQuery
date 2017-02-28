@@ -10,6 +10,7 @@ jQuery plugin for AnyChart provides an easy way to use [AnyChart JavaScript Char
 * [Download and Install](#download-and-install)
 * [Quick Start](#quick-start)
 * [Examples Overview](#examples-overview)
+* [API Overview](#api-overview)
 * [Contacts](#contacts)
 * [Links](#links)
 * [License](#license)
