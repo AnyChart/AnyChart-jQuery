@@ -6,14 +6,26 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../dist/anychart-jquery.min.js"></script>
     <link rel="stylesheet" href="assets/anychart-ui.min.css"/>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 800px;
+            height: 537px;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 800px; height: 480px;"></div>
+<div id="container"></div>
 <script>
     var data = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TREE);
     var cnt = $('#container');
     cnt.anychart('ganttProject', data);
     var chart = cnt.anychart();
+    chart.splitterPosition(223);
     chart.fitAll();
 </script>
 </body>

@@ -5,24 +5,38 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../dist/anychart-jquery.min.js"></script>
     <link rel="stylesheet" href="assets/anychart-ui.min.css"/>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #load {
+            margin: 15px 0 10px 15px;
+        }
+
+        #container {
+            width: 640px;
+            height: 480px;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 640px; height: 480px;"></div>
 <button id="load">load new data</button>
+<div id="container"></div>
 <script>
     var cnt = $('#container');
     cnt.anychart('line', [3, 1, 2]);
 
-    $('#load').click(function() {
+    $('#load').click(function () {
         $.ajax({
             url: 'assets/data.json',
             type: 'GET',
             dataType: 'json'
-        }).done(function(json) {
+        }).done(function (json) {
             cnt.anychart().data(json);
         })
     });
-
 </script>
 </body>
 </html>

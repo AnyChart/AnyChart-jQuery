@@ -5,10 +5,26 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../dist/anychart-jquery.min.js"></script>
     <link rel="stylesheet" href="assets/anychart-ui.min.css"/>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #button {
+            margin: 15px 0 10px 15px;
+        }
+
+        #container {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
 </head>
 <body>
 <button id="button">Render another dashboard</button>
-<div id="container" style="width: 800px; height: 600px;"></div>
+<div id="container"></div>
 <script>
     var cnt = $('#container');
     var chart1 = anychart.column([2, 4, 2, 1]);
@@ -26,7 +42,7 @@
 
     cnt.anychartStage(chart1, chart2);
 
-    $('button').click(function() {
+    $('button').click(function () {
         cnt.anychartStage(chart3, chart4);
     })
 </script>
