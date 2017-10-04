@@ -1,6 +1,6 @@
 {
   "name": "anychart-jquery",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JQuery plugin for AnyChart JavaScript charting library",
   "main": "./dist/anychart-jquery.min.js",
   "scripts": {
@@ -39,8 +39,8 @@
     "framework",
     "VML"
   ],
-  "devDependencies": {
-    "anychart": "^7.14.0",
+  "dependencies": {
+    "anychart": "^8.0.0",
     "jquery": "^3.2.1"
   }
 }
