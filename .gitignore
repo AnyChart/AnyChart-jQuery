@@ -3,3 +3,5 @@
 *.pid
 *.swo
 *.swp
+node_modules
+yarn.lock
