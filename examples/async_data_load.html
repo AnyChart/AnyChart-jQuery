@@ -1,45 +1,52 @@
 <!doctype html>
 <html>
-<head>
+
+  <head>
     <script src="../node_modules/anychart/dist/js/anychart-base.min.js"></script>
     <script src="../node_modules/anychart/dist/js/anychart-ui.min.js"></script>
     <script src="../node_modules/anychart/dist/js/anychart-exports.min.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../dist/anychart-jquery.min.js"></script>
-    <link rel="stylesheet" href="../node_modules/anychart/dist/css/anychart-ui.min.css"/>
-    <link rel="stylesheet" href="../node_modules/anychart/dist/fonts/css/anychart-font.min.css"/>
+    <link rel="stylesheet" href="../node_modules/anychart/dist/css/anychart-ui.min.css" />
+    <link rel="stylesheet" href="../node_modules/anychart/dist/fonts/css/anychart-font.min.css" />
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-        }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-        #load {
-            margin: 15px 0 10px 15px;
-        }
+      #load {
+        margin: 15px 0 10px 15px;
+      }
 
-        #container {
-            width: 640px;
-            height: 480px;
-        }
+      #container {
+        width: 640px;
+        height: 480px;
+      }
+
     </style>
-</head>
-<body>
-<button id="load">load new data</button>
-<div id="container"></div>
-<script>
-    var cnt = $('#container');
-    cnt.anychart('line', [3, 1, 2]);
+  </head>
 
-    $('#load').click(function () {
+  <body>
+    <button id="load">load new data</button>
+    <div id="container"></div>
+    <script>
+      var cnt = $('#container');
+      cnt.anychart('line', [3, 1, 2]);
+
+      $('#load').click(function () {
         $.ajax({
-            url: 'assets/data.json',
-            type: 'GET',
-            dataType: 'json'
+          url: 'assets/data.json',
+          type: 'GET',
+          dataType: 'json'
         }).done(function (json) {
-            cnt.anychart().data(json);
+          cnt.anychart().data(json);
         })
-    });
-</script>
-</body>
+      });
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.3/iframeResizer.contentWindow.min.js"></script>
+  </body>
+
 </html>

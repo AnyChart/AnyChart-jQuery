@@ -1,47 +1,54 @@
 <!doctype html>
 <html>
-<head>
+
+  <head>
     <script src="../node_modules/anychart/dist/js/anychart-base.min.js"></script>
     <script src="../node_modules/anychart/dist/js/anychart-ui.min.js"></script>
     <script src="../node_modules/anychart/dist/js/anychart-exports.min.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../dist/anychart-jquery.min.js"></script>
-    <link rel="stylesheet" href="../node_modules/anychart/dist/css/anychart-ui.min.css"/>
-    <link rel="stylesheet" href="../node_modules/anychart/dist/fonts/css/anychart-font.min.css"/>
+    <link rel="stylesheet" href="../node_modules/anychart/dist/css/anychart-ui.min.css" />
+    <link rel="stylesheet" href="../node_modules/anychart/dist/fonts/css/anychart-font.min.css" />
 
     <style>
-        .chart {
-            width: 400px;
-            height: 200px;
-        }
+      .chart {
+        width: 400px;
+        height: 200px;
+      }
 
-        html, body {
-            margin: 0;
-            padding: 0;
-        }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-        #bg {
-            margin: 15px 0 10px 15px;
-        }
+      #bg {
+        margin: 15px 0 10px 15px;
+      }
+
     </style>
-</head>
-<body>
-<button id="bg">change backgrounds</button>
-<div class="chart"></div>
-<div class="chart"></div>
-<div class="chart"></div>
-<script>
-    var cnts = $('.chart');
+  </head>
 
-    cnts.anychart('column', [3, 1, 2], [5, 3, 6]);
+  <body>
+    <button id="bg">change backgrounds</button>
+    <div class="chart"></div>
+    <div class="chart"></div>
+    <div class="chart"></div>
+    <script>
+      var cnts = $('.chart');
 
-    var bg = 'red green blue'.split(' ');
+      cnts.anychart('column', [3, 1, 2], [5, 3, 6]);
 
-    $('#bg').click(function() {
-        cnts.each(function(index) {
-            $(this).anychart().background(bg[index] + ' .5');
+      var bg = 'red green blue'.split(' ');
+
+      $('#bg').click(function () {
+        cnts.each(function (index) {
+          $(this).anychart().background(bg[index] + ' .5');
         });
-    })
-</script>
-</body>
+      })
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.3/iframeResizer.contentWindow.min.js"></script>
+  </body>
+
 </html>

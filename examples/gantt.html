@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
-<head>
+
+  <head>
     <script src="../node_modules/anychart/dist/js/anychart-base.min.js"></script>
     <script src="../node_modules/anychart/dist/js/anychart-gantt.min.js"></script>
     <script src="../node_modules/anychart/dist/js/anychart-ui.min.js"></script>
@@ -8,29 +9,35 @@
     <script src="assets/hierarchical-data.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../dist/anychart-jquery.min.js"></script>
-    <link rel="stylesheet" href="../node_modules/anychart/dist/css/anychart-ui.min.css"/>
-    <link rel="stylesheet" href="../node_modules/anychart/dist/fonts/css/anychart-font.min.css"/>
+    <link rel="stylesheet" href="../node_modules/anychart/dist/css/anychart-ui.min.css" />
+    <link rel="stylesheet" href="../node_modules/anychart/dist/fonts/css/anychart-font.min.css" />
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-        }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-        #container {
-            width: 800px;
-            height: 537px;
-        }
+      #container {
+        width: 800px;
+        height: 537px;
+      }
+
     </style>
-</head>
-<body>
-<div id="container"></div>
-<script>
-    var data = anychart.data.tree(getData(), 'as-tree');
-    var cnt = $('#container');
-    cnt.anychart('ganttProject', data);
-    var chart = cnt.anychart();
-    chart.splitterPosition(223);
-    chart.fitAll();
-</script>
-</body>
+  </head>
+
+  <body>
+    <div id="container"></div>
+    <script>
+      var data = anychart.data.tree(getData(), 'as-tree');
+      var cnt = $('#container');
+      cnt.anychart('ganttProject', data);
+      var chart = cnt.anychart();
+      chart.splitterPosition(223);
+      chart.fitAll();
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.3/iframeResizer.contentWindow.min.js"></script>
+  </body>
+
 </html>

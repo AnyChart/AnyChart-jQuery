@@ -1,45 +1,52 @@
 <!doctype html>
 <html>
-<head>
+
+  <head>
     <script src="js/vendor/proj4.js"></script>
     <script src="../node_modules/anychart/dist/js/anychart-base.min.js"></script>
     <script src="../node_modules/anychart/dist/js/anychart-map.min.js"></script>
     <script src="../node_modules/anychart/dist/js/anychart-ui.min.js"></script>
     <script src="../node_modules/anychart/dist/js/anychart-exports.min.js"></script>
-    <script src="../node_modules/anychart/dist/geodata/countries/australia/australia.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/geodata/countries/australia/australia.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../dist/anychart-jquery.min.js"></script>
-    <link rel="stylesheet" href="../node_modules/anychart/dist/css/anychart-ui.min.css"/>
-    <link rel="stylesheet" href="../node_modules/anychart/dist/fonts/css/anychart-font.min.css"/>
+    <link rel="stylesheet" href="../node_modules/anychart/dist/css/anychart-ui.min.css" />
+    <link rel="stylesheet" href="../node_modules/anychart/dist/fonts/css/anychart-font.min.css" />
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-        }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-        #container {
-            width: 800px;
-            height: 600px;
-        }
+      #container {
+        width: 800px;
+        height: 600px;
+      }
+
     </style>
-</head>
-<body>
-<div id="container"></div>
-<script>
-    $(document).ready(function() {
+  </head>
+
+  <body>
+    <div id="container"></div>
+    <script>
+      $(document).ready(function () {
         var data = anychart.data.set([
-            {'id': 'AU.WA', 'value': 300},
-            {'id': 'AU.JB', 'value': 230},
-            {'id': 'AU.NS', 'value': 240},
-            {'id': 'AU.VI', 'value': 275},
-            {'id': 'AU.NT', 'value': 130},
-            {'id': 'AU.TS', 'value': 190},
-            {'id': 'AU.CT', 'value': 100},
-            {'id': 'AU.SA', 'value': 305},
-            {'id': 'AU.QL', 'value': 190}
+          { 'id': 'AU.WA', 'value': 300 },
+          { 'id': 'AU.JB', 'value': 230 },
+          { 'id': 'AU.NS', 'value': 240 },
+          { 'id': 'AU.VI', 'value': 275 },
+          { 'id': 'AU.NT', 'value': 130 },
+          { 'id': 'AU.TS', 'value': 190 },
+          { 'id': 'AU.CT', 'value': 100 },
+          { 'id': 'AU.SA', 'value': 305 },
+          { 'id': 'AU.QL', 'value': 190 }
         ]);
         $('#container').anychart('choropleth', 'anychart.maps.australia', data);
-    });
-</script>
-</body>
+      });
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.3/iframeResizer.contentWindow.min.js"></script>
+  </body>
+
 </html>
