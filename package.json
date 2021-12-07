@@ -40,7 +40,7 @@
     "VML"
   ],
   "dependencies": {
-    "anychart": "^8.0.0",
+    "anychart": "latest",
     "jquery": "^3.2.1"
   }
 }
